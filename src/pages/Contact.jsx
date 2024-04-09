@@ -10,7 +10,7 @@ import PopUp from "../components/Popup";
 const Contact = () => {
     const [formData, setFormData] = useState({ name: '', email: '', celular: '' });
     const [isPopupOpen, setIsPopupOpen] = useState(false);
-
+    const [popupMessage, setPopupMessage] = useState('');
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setFormData(prevData => ({ ...prevData, [name]: value }));
@@ -19,6 +19,7 @@ const Contact = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         setIsPopupOpen(true);
+        setPopupMessage('Dados enviados com sucesso!');
     };
 
     const handleClosePopUp = () => {
@@ -51,7 +52,7 @@ const Contact = () => {
                     placeholder="Telefone"
                 />
                 <Button children={'Enviar'} onClick={handleSubmit}/>
-                {isPopupOpen && <PopUp message={'Dados enviados com sucesso'} onClose={handleClosePopUp}/>}
+                {isPopupOpen && <PopUp message={popupMessage} additionalContent={<Button onClick={handleClosePopUp}>Fechar</Button>} onClose={handleClosePopUp}/>}
             </form>
         </div>
     );
