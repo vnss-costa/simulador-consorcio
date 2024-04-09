@@ -5,6 +5,7 @@ import '../css/Styles.css';
 import Button from "../components/Button";
 import SelectDropdown from "../components/SelectDropdown";
 import Info from "../components/Info";
+import Header from "../components/Header";
 
 const Home = () => {
 
@@ -130,6 +131,7 @@ const Home = () => {
 
   return (
     <div className='body'>
+      <Header/>
       <div className='title'>
         <h1>Faça sua simulação!</h1>
       </div>
