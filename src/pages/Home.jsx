@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
-
+import {AlignJustify} from 'lucid-react';
 import '../css/Styles.css';
 
 import Button from "../components/Button";
 import SelectDropdown from "../components/SelectDropdown";
 import Info from "../components/Info";
 import Header from "../components/Header";
+import SideBar from "../components/Sidebar";
 
 const Home = () => {
+
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 
   const [autoBrands, setAutoBrands] = useState([]);
   const [autoModels, setAutoModels] = useState([]);
@@ -123,6 +126,10 @@ const Home = () => {
     setSelectedPreco(event.target.value);
   } 
 
+  const toggleSideBar = () => {
+    setIsSideBarOpen(!isSideBarOpen);
+  }
+
   const handleButtonClick = () => {
     console.log('Botão clicado');  
   };
@@ -131,6 +138,8 @@ const Home = () => {
 
   return (
     <div className='body'>
+      <AlignJustify className='sidebar-icon' onClick={toggleSideBar}/>
+      <SideBar isSideBarOpen={isSideBarOpen}/>
       <Header/>
       <div className='title'>
         <h1>Faça sua simulação!</h1>
@@ -160,7 +169,7 @@ const Home = () => {
           onChange={handleAnoChange}
           defaultLabel={'Selecione o ano'} 
         />
-        <Info value={autoPreco}/>
+        <Info label={'Preço'} value={autoPreco}/>
         <div className='buttons-cage'>
           <Button to={`/Simulate?value=${autoPreco}`} children={'Simular'} onClick={handleButtonClick}/>
           <Button to={'/Contact'} children={'Contato'} onClick={handleButtonClick}/>
