@@ -24,6 +24,7 @@ const Contact = () => {
 
     const handleClosePopUp = () => {
         setIsPopupOpen(false);
+        setFormData({ name: '', email: '', celular: '' });
     };
 
     return (
