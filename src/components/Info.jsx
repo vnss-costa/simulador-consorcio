@@ -1,9 +1,14 @@
 import React from 'react';
 
-const Info = ({ value }) => {
+const Info = ({ label, value }) => {
     return (
         <div className='info'>
-            {value}
+            {value ? (
+            <div>{value}</div>
+            ) : (
+            <div>{label}</div>
+            )
+            }
         </div>
     )
 };
