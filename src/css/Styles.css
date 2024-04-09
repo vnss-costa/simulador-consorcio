@@ -200,20 +200,28 @@ body {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background-color: white;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  .popup-content {
+      background-color: #ffffff; /* Fundo branco */
+      border: 2px solid #012069; /* Bordas de cor 012069 */
+      border-radius: 8px; /* Borda arredondada */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra */
+      max-width: 300px; /* Largura máxima */
+      padding: 20px; /* Espaçamento interno */
+      color: #000000; /* Cor do texto */
+      font-size: 16px; /* Tamanho da fonte */
+      align-items: center;
+    }
+    
+    .popup-content {
+      position: relative;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-  }
-  
-  .close {
+      flex-direction: column;
+    }
+    
+    .close {
+      position: absolute;
+      top: 5px;
+      right: 5px;
       cursor: pointer;
-  }
-  
+      font-size: 20px;
+    }
