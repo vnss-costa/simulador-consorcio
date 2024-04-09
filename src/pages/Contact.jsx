@@ -29,7 +29,7 @@ const Contact = () => {
         <div className='body'>
             <Header/>
             <div className='title'>
-                <h1>Deixe seu contato!</h1>
+                <h1>Entraremos em contato com você!</h1>
             </div>
             <form className='container' onSubmit={handleSubmit}>
                 <Input 
