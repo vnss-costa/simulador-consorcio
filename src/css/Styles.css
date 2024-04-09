@@ -39,7 +39,7 @@ body {
     background-color: #FDDA24;
     border: none;
     border-radius: 20px;
-    padding: 10px 20px;
+    padding: 20px 40px;
     color: #030303;
     cursor: pointer;
     outline: none;
@@ -48,6 +48,8 @@ body {
     margin-top: 10px;
     align-self: center;
     display: flex;
+    font-size: 16px; 
+
   }
   
   .button:hover {
@@ -57,7 +59,7 @@ body {
   /* Estilos responsivos */
   @media screen and (max-width: 768px) {
     .button {
-      padding: 8px 16px; /* Ajusta o padding para telas menores */
+      padding: 15px 30px; /* Ajusta o padding para telas menores */
     }
   }
   
